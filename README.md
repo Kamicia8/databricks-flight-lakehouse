@@ -40,40 +40,40 @@ First, an [Azure account](https://portal.azure.com/?Microsoft_Azure_Education_co
 The `Storage Account`, named `newadbprojektkakastorage`, is responsible for the secure storage of data and its accessibility to other Azure services, such as Databricks, for further processing and analysis. During the setup, a new `Resource Group` named `rg_databrics_project` was created to serve as a logical container for all project-related resources.
 
 <br>
-<img src="/Workspace/Users/kcwikla@student.agh.edu.pl/databricks-flight-lakehouse/images/s_account.png" width="700">
+<img src="images/s_account.png" width="700">
 <br>
-<img src="/Workspace/Users/kcwikla@student.agh.edu.pl/databricks-flight-lakehouse/images/advn_s_account.png" width="700">
+<img src="images/advn_s_account.png" width="700">
 
 After completing these steps, the `Resources` tab in Azure appears as follows:
 
 <br>
-<img src="/Workspace/Users/kcwikla@student.agh.edu.pl/databricks-flight-lakehouse/images/after_storage_gr_acc.png" width="700">
+<img src="images/after_storage_gr_acc.png" width="700">
 
 - `Storage account` -> `Data storage` -> `Container`
 
 Creating a data container named `data`.
 
 <br>
-<img src="/Workspace/Users/kcwikla@student.agh.edu.pl/databricks-flight-lakehouse/images/data_container.png" width="700">
+<img src="images/data_container.png" width="700">
 
 - `Azure Databricks` -> `Create`
 
 Creating a Databricks workspace named `new_databricks`.
 
 <br>
-<img src = "/Workspace/Users/kcwikla@student.agh.edu.pl/databricks-flight-lakehouse/images/new_databricks.png" width="700">
+<img src = "images/new_databricks.png" width="700">
 
 It is important to ensure the following settings are applied in the `Networking` tab (avoiding a public IP helps to prevent unnecessary costs):
 
 <br>
-<img src = "/Workspace/Users/kcwikla@student.agh.edu.pl/databricks-flight-lakehouse/images/what_was_causing_money.png" width="700">
+<img src = "images/what_was_causing_money.png" width="700">
 
 Once created, click `Launch Workspace` to open the Databricks environment.
 
 - `Databricks` -> `New` -> `Cluster` 
 
 <br>
-<img src = "/Workspace/Users/kcwikla@student.agh.edu.pl/databricks-flight-lakehouse/images/create_cluster.png" width="700">
+<img src = "images/create_cluster.png" width="700">
 
 Next, we used the Kaggle API to download the datasets into the data container via the `load_data_from_kaggle.ipynb` notebook. The project workflow was also synchronized with GitHub using Databricks Repos for version control.
 
