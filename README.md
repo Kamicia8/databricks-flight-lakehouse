@@ -12,7 +12,7 @@ Table of Contents:
 * [Environment Setup in Azure](#environment-setup-in-azure)
 * [Prediction](#prediction)
 * [Summary](#summary)
-* [Links](#bibliography)
+* [Links](#links)
 
 ---
 
