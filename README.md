@@ -81,8 +81,7 @@ Next, we used the Kaggle API to download the datasets into the data container vi
 You can view the interactive version of the dashboard here:
 [Click to open Dashboard](https://htmlpreview.github.io/?https://github.com/Kamicia8/databricks-flight-lakehouse/blob/main/dashboard.html)
 
-*dopóki nie zmergowane, to bedzie dzialac to ponizsze, potem usunąc*
-[Click to open Dashboard](https://htmlpreview.github.io/?https://github.com/Kamicia8/databricks-flight-lakehouse/blob/data-analysis/dashboard.html)
+*dopóki nie zmergowane, to nie bedzie dzialac*
 
 
 ## Prediction
