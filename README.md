@@ -16,6 +16,7 @@
 ## Table of Contents
 * [Project Goal](#project-goal)
 * [Data](#data)
+* [Repository Structure](#repository-structure)
 * [Pipeline](#pipeline)
 * [Environment Setup in Azure](#environment-setup-in-azure)
 * [Prediction](#prediction)
@@ -25,7 +26,7 @@
 ---
 ## Project Goal
 
-The goal of this project is to build and showcase a data processing pipeline using **Azure Databricks**. The project showcases the entire data lifecycle — from ingestion from selected sources, through cleansing and preprocessing, to preparing the data for analytics and machine learning models.
+The goal of this project is to build and showcase a data processing pipeline using **Azure Databricks**. The project showcases the entire data lifecycle - from ingestion from selected sources, through cleansing and preprocessing, to preparing the data for analytics and machine learning models.
 
 ## Data
 
@@ -33,8 +34,54 @@ Analysis is based on the [2015 Flight Delays and Cancellations](https://www.kagg
 
 Additionally, the project incorporates the [NOAA JFK](https://www.kaggle.com/datasets/mexwell/noaa-weather-data-jfk-airport?select=jfk_weather.csv) dataset, which contains hourly weather observations from JFK Airport. The attributes include temperature, wind speed, humidity, visibility, and atmospheric pressure. By extracting data specifically for the year 2015, we can integrate it with the flight records from the same period. This allows for an **in-depth analysis** of how specific weather conditions impact flight delays at JFK Airport.
 
-## Pipeline
+## Repository Structure
 
+```text
+.
+├── .databricks/                  # Databricks environment configuration
+├── images/                       # Screenshots and diagrams used in the README
+├── data_analysis.ipynb           # Exploratory Data Analysis (EDA), visualizations, and insights
+├── data_cleaning.ipynb           # Data preprocessing, cleaning, and joining with weather data
+├── load_data_from_kaggle.ipynb   # Script to fetch data from Kaggle API to Azure Storage
+├── read_data_from_raw_test.ipynb # Quick verification of raw data ingestion
+└── README.md                     # Main project documentation
+```
+
+## Pipeline
+*(i am not sure if we need that here but i will put it just in case)*
+![ADZD - Projekt](https://github.com/user-attachments/assets/f44a5374-577f-4d81-8148-8faf00c486e4)
+
+
+The project follows a modern Lakehouse architecture pattern. Below is the workflow overview:
+
+```mermaid
+graph TD
+    subgraph Ingestion [Data Ingestion]
+        K[Kaggle API] -->|Download CSVs| L(load_data_from_kaggle.ipynb)
+        L -->|Raw Data| S1[(Azure Blob Storage<br/>Container: data)]
+    end
+
+    subgraph Processing [Data Processing]
+        S1 -->|Read Raw CSVs| C(data_cleaning.ipynb)
+        C -->|Filter, Join Weather, Clean| C
+        C -->|Cleaned Table| S2[(Processed Data)]
+    end
+
+    subgraph Analytics [Analytics & ML]
+        S2 -->|Load Cleaned Data| A(data_analysis.ipynb)
+        S2 -->|Feature Engineering| P(Prediction Model)
+        A -->|Visualizations| D[Dashboard/Plots]
+        P -->|RMSE & Insights| O[Final Output]
+    end
+
+    classDef green fill:#ffab91,stroke:#01579b,stroke-width:2px;
+    class K,L,C,A,P green
+```
+ **Pipeline Workflow:**
+> 1. **Ingestion:** Data is fetched directly from Kaggle (Flights & Weather datasets) using the Kaggle API and stored in Azure Blob Storage.
+> 2. **Processing:** The `data_cleaning` notebook handles missing values, converts timestamps, filters outliers, and joins flight data with hourly weather conditions from JFK.
+> 3. **Analytics:** The cleaned dataset is used in `data_analysis` to generate insights on delays.
+> 4. **Modeling:** Finally, machine learning models (RandomForest/GBT) are applied to predict delay durations based on weather and flight parameters.
 
 ## Environment Setup in Azure
 
