@@ -86,7 +86,7 @@ First, an [Azure account](https://portal.azure.com/) was created. This project u
 
 ### 1. Storage Setup
 
-**Path:** `Create resource` > `Storage account`
+**Step:** `Create resource` > `Storage account`
 
 The `Storage Account`, named `newadbprojektkakastorage`, is responsible for the secure storage of data and its accessibility to other Azure services, such as Databricks. During the setup, a new **Resource Group** named `rg_databrics_project` was created to serve as a logical container for all project-related resources.
 
@@ -101,7 +101,7 @@ After completing these steps, the **Resources** tab in Azure appears as follows:
   <img src="images/after_storage_gr_acc.png" width="700">
 </div>
 
-**Path:** `Storage account` > `Data storage` > `Container`
+**Step:** `Storage account` > `Data storage` > `Container`
 
 Creating a data container named `data`:
 
@@ -111,7 +111,7 @@ Creating a data container named `data`:
 
 ### 2. Databricks Workspace
 
-**Path:** `Azure Databricks` > `Create`
+**Step:** `Azure Databricks` > `Create`
 
 Creating a Databricks workspace named `new_databricks`.
 
@@ -129,7 +129,7 @@ Once created, click **Launch Workspace** to open the Databricks environment.
 
 ### 3. Cluster Configuration
 
-**Path:** `Databricks` > `New` > `Cluster`
+**Step:** `Databricks` > `New` > `Cluster`
 
 <div align="center">
   <img src="images/create_cluster.png" width="700">
