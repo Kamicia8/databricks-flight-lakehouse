@@ -137,12 +137,6 @@ Once created, click **Launch Workspace** to open the Databricks environment.
 
 Next, we used the Kaggle API to download the datasets into the data container via the `load_data_from_kaggle.ipynb` notebook. The project workflow was also synchronized with GitHub using Databricks Repos for version control.
 
-## Interactive Dashboard
-You can view the interactive version of the dashboard here:
-[Click to open Dashboard](https://htmlpreview.github.io/?https://github.com/Kamicia8/databricks-flight-lakehouse/blob/main/dashboard.html)
-
-*dopóki nie zmergowane, to nie bedzie dzialac*
-
 
 ## Prediction
 
