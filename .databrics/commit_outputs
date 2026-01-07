@@ -14,8 +14,6 @@
 # Uncomment the following pattern to include output for all notebooks
 # **
  
-read_data_from_raw_test.ipynb
-prediction.ipynb
-load_data_from_kaggle.ipynb
 data_cleaning.ipynb
 data_analysis.ipynb
+prediction.ipynb
