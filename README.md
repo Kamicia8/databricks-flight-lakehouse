@@ -48,9 +48,6 @@ Additionally, the project incorporates the [NOAA JFK](https://www.kaggle.com/dat
 ```
 
 ## Pipeline
-*(i am not sure if we need that here but i will put it just in case)*
-![ADZD - Projekt](https://github.com/user-attachments/assets/f44a5374-577f-4d81-8148-8faf00c486e4)
-
 
 The project follows a modern Lakehouse architecture pattern. Below is the workflow overview:
 
@@ -74,7 +71,7 @@ graph TD
         P -->|RMSE & Insights| O[Final Output]
     end
 
-    classDef green fill:#ffab91,stroke:#01579b,stroke-width:2px;
+    classDef green fill:#ffab91,stroke:#ffffff,stroke-width:2px,color:#000000;
     class K,L,C,A,P green
 ```
  **Pipeline Workflow:**
