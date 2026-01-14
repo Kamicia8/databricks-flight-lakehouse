@@ -20,7 +20,7 @@
 * [Pipeline](#pipeline)
 * [Environment Setup in Azure](#environment-setup-in-azure)
 * [Prediction](#prediction)
-* [Summary](#summary)
+<!-- * [Summary](#summary) -->
 * [Links](#links)
 
 ---
@@ -38,13 +38,15 @@ Additionally, the project incorporates the [NOAA JFK](https://www.kaggle.com/dat
 
 ```text
 .
-├── .databricks/                  # Databricks environment configuration
-├── images/                       # Screenshots and diagrams used in the README
-├── data_analysis.ipynb           # Exploratory Data Analysis (EDA), visualizations, and insights
-├── data_cleaning.ipynb           # Data preprocessing, cleaning, and joining with weather data
-├── load_data_from_kaggle.ipynb   # Script to fetch data from Kaggle API to Azure Storage
-├── read_data_from_raw_test.ipynb # Quick verification of raw data ingestion
-└── README.md                     # Main project documentation
+├── .databricks/                      # Databricks environment configuration
+├── images/                           # Screenshots and diagrams used in the README
+├── data_analysis.ipynb               # Exploratory Data Analysis (EDA), visualizations, and insights
+├── data_cleaning.ipynb               # Data preprocessing, cleaning, and joining with weather data
+├── load_data_from_kaggle.ipynb       # Script to fetch data from Kaggle API to Azure Storage
+├── read_data_from_raw_test.ipynb     # Verification of raw data ingestion
+├── prediction_models.ipynb           # ML experiments on cleaned data (classification & regression)
+├── prediction_models_outliers.ipynb  # ML experiments with outliers
+└── README.md                         # Main project documentation
 ```
 
 ## Pipeline
@@ -140,8 +142,13 @@ Next, we used the Kaggle API to download the datasets into the data container vi
 
 ## Prediction
 
+The project involves predicting flight delays using both classification (to determine if a delay will occur) and regression (to estimate the exact delay duration in minutes). For the regression models, tests were conducted using both raw data and log-transformed target variables (log1p). Additionally, the analysis compared model performance across two scenarios: using the complete dataset and a cleaned dataset with outliers removed. This approach allowed for a comprehensive evaluation of how extreme delay values impact model stability and predictive accuracy.
 
-## Summary
+Sadly, the classification and regression models do not demonstrate significant predictive power. In the classification task, an AUC of around 0.51 indicates performance no better than random guessing; the high accuracy observed is a result of a highly imbalanced dataset dominated by on-time flights. In the regression task, an R2 close to zero suggests that the available features are insufficient to predict delay duration in minutes. The most influential features were DISTANCE and HOURLYWindSpeed, while the impact of airlines was minimal. Overall, the current dataset does not provide enough signal for reliable flight delay prediction.
+
+(wyniki bez outlierów opisac jesli sie uda uzyakc inne)
+
+<!-- ## Summary -->
 
 
 ## Links
