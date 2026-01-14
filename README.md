@@ -146,9 +146,7 @@ The project involves predicting flight delays using both classification (to dete
 
 Sadly, the classification and regression models do not demonstrate significant predictive power. In the classification task, an AUC of around 0.51 indicates performance no better than random guessing; the high accuracy observed is a result of a highly imbalanced dataset dominated by on-time flights. In the regression task, an R2 close to zero suggests that the available features are insufficient to predict delay duration in minutes. The most influential features were DISTANCE and HOURLYWindSpeed, while the impact of airlines was minimal. Overall, the current dataset does not provide enough signal for reliable flight delay prediction.
 
-(wyniki bez outlierów opisac jesli sie uda uzyakc inne)
-
-<!-- ## Summary -->
+The Gradient Boosted Tree regressor failed to accurately model delay times when extreme outliers were retained, yielding a negative $R^2$ score of approximately -0.04 for both raw and log-transformed targets. Despite applying log-transformations to compress the long tail of delay data, the model exhibited high variance with a Root Mean Square Error (RMSE) of roughly 15 minutes. The presence of outliers caused significant instability in the model's logic, leading to erratic shifts in feature importance between wind speed and visibility. Ultimately, this experiment demonstrates that extreme delays introduce excessive noise that prevents accurate regression based solely on weather data, necessitating outlier removal or a shift to classification for catastrophic events.
 
 
 ## Links
